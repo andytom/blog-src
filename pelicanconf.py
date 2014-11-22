@@ -6,7 +6,7 @@ AUTHOR = "andytom"
 SITENAME = 'andytom.github.io'
 #SITEURL = 'https://andytom.github.io'
 SITEURL = ''
-THEME = "./pelican-themes/gum"
+THEME = "../pure-single"
 
 PATH = 'content'
 

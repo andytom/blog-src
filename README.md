@@ -7,7 +7,9 @@ Pelican config and source files for [andytom.githib.io](https://github.com/andyt
 Usage
 -----
 
-* Checkout this repo and [andytom.githib.io](https://github.com/andytom/andytom.github.io) into the same base directory.
+* Checkout this repo, [pure-single](https://github.com/andytom/pure-single)
+and [andytom.githib.io](https://github.com/andytom/andytom.github.io)
+into the same base directory.
 * ```cd blog-src```
 * ```ln -s ../andytom.github.io ./output```
 * You can now make changes to the content.
