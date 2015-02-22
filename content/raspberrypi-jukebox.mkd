@@ -1,0 +1,153 @@
+Title: Raspberry Pi Jukebox
+Date: 21-11-2014 21:12
+Category: Raspberry Pi
+Tags: Raspberry Pi, MPD
+Summary: Turn you Raspberry Pi into a network controlled Music Player
+Status: Draft
+
+If you have a Raspberry Pi and some spare speakers you can turn your Raspberry
+Pi into a music player that can be controlled remotely from your Laptop,
+Computer, Tablet or Smart Phone. Once you have done the basic set up you can
+remove any attached screens, keyboards and mice and run it completely remotely. 
+
+The software that we are going to be using to manage the music library and play
+music is [Music Player Daemon (MPD)](http://www.musicpd.org/). MPD is a very
+simple program all it does is manages the database of music, organises playlists
+and plays the audio files. You then use a client to interact with MPD to, for
+example, tell it what you want to play.
+
+### What you will need
+
+* **A Rapberry Pi with Raspbian installed** -
+This should work with any model but you may need a USB WiFi dongle to connect
+to the network.
+* **Some Speakers** - A set of speakers that you can connect to your Raspberry
+Pi so you can hear the music you are playing.
+* **Some Music** - Some music to listen too.
+
+### Setting up 
+
+First you need to set up your Raspberry Pi and install Raspbian.
+Once you have Raspbian installed you can connect it to your network how you do
+this will depend on if you are using a wired or wifi connection.
+
+The best source of information for how to do this is the
+[Official Rasberry Pi documentation](http://www.raspberrypi.org/documentation/)
+for setting up your Rasberry Pi and Raspbian, configuring the network and
+the speakers.
+
+### Installing and Configuring Music Player Daemon
+
+Open a shell on your Raspberry Pi, update the apt database and use ```apt``` to
+install the ```mpd``` and ```mpc``` packages. These packages contain the main
+MPD program and a simple client to interact with MPD.
+
+```bash
+sudo apt-get update
+sudo apt-get install mpd mpc
+```
+
+The default setting that come in with MPD should be suitable for our purposes.
+However if you are curious and want to find out more they are stored in
+```/etc/mpd.conf```. You can also use the ```man``` command to find out more
+about the individual settings.
+
+```bash
+man mpd.conf
+```
+
+### Adding your Music
+
+By default MPD look for audio files in ```/var/lib/mpd/music```.
+
+You can copy your music into this directory.
+
+```bash
+cp /path/to/your/music/files/* /var/lib/mpd/music
+```
+
+Once you have copied your music in you need to tell MPD to update your library.
+
+```bash
+mpc update --wait
+```
+
+Depending on how many files you have this might take a few minutes. However one
+it has completed you can get MPD to tell you some statistics about the files you
+just added.
+
+```bash
+mpc stats
+```
+
+This will print out something similar to the below. However it will show the
+number of different Artists, Albums and Songs you just added to you library.
+
+```
+Artists:     44
+Albums:     217
+Songs:    11270
+
+Play Time:    6 days, 12:52:12
+Uptime:       70 days, 5:20:56
+DB Updated:   Sat Feb 21 23:29:58 2015
+DB Play Time: 133 days, 10:40:55
+```
+
+Now that you have some music in you library you can test everything is working
+by playing something. First list all the tracks that you have in you library,
+then add some tracks to a playlist and start playing the playlist.
+
+```bash
+mpc listall
+mpc add some/song/name
+mpc play
+```
+
+Once you have tested that it is working correctly you can stop what is playing
+with ```mpc```.
+
+```bash
+mpc stop
+```
+
+You can use the ```man``` command to find out more about ```mpc```.
+
+```bash
+man mpc
+```
+
+### Clients
+
+So far we have only been using the ```mpc``` client.
+This is not the only client for MPD. Since MPD is open-source there are many
+alternative such as 
+[mpdroid](https://play.google.com/store/apps/details?id=com.namelessdev.mpdroid)
+for Android and [Auremo](https://code.google.com/p/auremo/) for Windows.
+You can find a big list of clients including a native client for the Wii
+([WiiMPC](http://mpd.wikia.com/wiki/Client:WiiMPC)) on the
+[MPD wiki](http://mpd.wikia.com/wiki/Clients).
+
+### Additional Steps
+
+Copying all the music into ```/var/lib/mpd/music``` is not ideal a Raspberry Pi
+will be running on a SD Card which has limited space.
+
+However there are alternatives you could load the music off an external USB Hard
+Disk Drive or from a network share.
+
+There are plenty of tutorials on the internet that explain how to mount external
+drive and network shares on Linux so that won't be covered here.
+
+Once you have mounted the extra share you can create a symbolic link to the 
+external drive from the MPD music directory.
+
+```bash
+ln -s /path/to/external_drive /var/lib/mpd/music/external_drive
+```
+
+MPD will follow the symbolic link and add any music in the external drive to
+the library when you use your client to tell MPD to update the library.
+
+This has only just scratched the surface of what MPD can do. Hopefully it
+encourage you to investigate what it can do yourself.
