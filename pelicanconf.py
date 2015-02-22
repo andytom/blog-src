@@ -13,7 +13,9 @@ TIMEZONE = 'Europe/London'
 
 DEFAULT_LANG = 'en'
 
-PROFILE_IMG_URL = 'https://avatars1.githubusercontent.com/u/108836?v=3&s=460'
+STATIC_PATHS = ['images']
+
+PROFILE_IMG_URL = '/images/me.jpg'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
