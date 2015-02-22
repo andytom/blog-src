@@ -3,7 +3,7 @@ Date: 21-11-2014 21:12
 Category: Raspberry Pi
 Tags: Raspberry Pi, MPD
 Summary: Turn you Raspberry Pi into a network controlled Music Player
-Status: Draft
+Status: Published
 
 If you have a Raspberry Pi and some spare speakers you can turn your Raspberry
 Pi into a music player that can be controlled remotely from your Laptop,
@@ -132,10 +132,8 @@ You can find a big list of clients including a native client for the Wii
 
 Copying all the music into ```/var/lib/mpd/music``` is not ideal a Raspberry Pi
 will be running on a SD Card which has limited space.
-
 However there are alternatives you could load the music off an external USB Hard
 Disk Drive or from a network share.
-
 There are plenty of tutorials on the internet that explain how to mount external
 drive and network shares on Linux so that won't be covered here.
 
@@ -149,5 +147,5 @@ ln -s /path/to/external_drive /var/lib/mpd/music/external_drive
 MPD will follow the symbolic link and add any music in the external drive to
 the library when you use your client to tell MPD to update the library.
 
-This has only just scratched the surface of what MPD can do. Hopefully it
+This guide has only just scratched the surface of what MPD can do. Hopefully it
 encourage you to investigate what it can do yourself.
