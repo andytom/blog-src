@@ -17,7 +17,7 @@ Setup
 TODO
 ----
 
-* Add githooks for pushing changes
+* [ ] Add githooks for pushing changes
 
 
 External Documentation
