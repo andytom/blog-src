@@ -23,4 +23,4 @@ TODO
 External Documentation
 ----------------------
 
-* [http://docs.getpelican.com/en/3.5.0/](Pelican Docs)
+* [Pelican Docs](http://docs.getpelican.com/en/3.5.0/)
