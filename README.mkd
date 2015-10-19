@@ -32,4 +32,4 @@ TODO
 External Documentation
 ----------------------
 
-* [Pelican Docs](http://docs.getpelican.com/en/3.5.0/)
+* [Pelican Docs](http://docs.getpelican.com/en/3.6.3/)
