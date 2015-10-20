@@ -148,7 +148,7 @@ ln -s /path/to/network_share /var/lib/mpd/music/network_share
 ```
 
 MPD will follow the symbolic link so long as the ```follow_outside_symlinks```
-setting is set to ```yes``` in ```mpd.conf``. So any music in the external drive
+setting is set to ```yes``` in ```mpd.conf```. So any music in the external drive
 or network share will be added to the library when you use your client to tell
 MPD to update the library.
 
