@@ -8,7 +8,7 @@ Status: Published
 If you have a Raspberry Pi and some spare speakers you can turn your Raspberry
 Pi into a music player that can be controlled remotely from your Laptop,
 Computer, Tablet or Smart Phone. Once you have done the basic set up you can
-remove any attached screens, keyboards and mice and run it completely remotely. 
+remove any attached screens, keyboards and mice and run it completely remotely.
 
 The software that we are going to be using to manage the music library and play
 music is [Music Player Daemon (MPD)](http://www.musicpd.org/). MPD is a very
@@ -26,7 +26,7 @@ to the network.
 Pi so you can hear the music you are playing.
 * **Some Music** - Some music to listen too.
 
-### Setting up 
+### Setting up
 
 First you need to set up your Raspberry Pi and install Raspbian.
 Once you have Raspbian installed you can connect it to your network how you do
@@ -122,7 +122,7 @@ man mpc
 
 So far we have only been using the ```mpc``` client.
 This is not the only client for MPD. Since MPD is open-source there are many
-alternative such as 
+alternative such as
 [mpdroid](https://play.google.com/store/apps/details?id=com.namelessdev.mpdroid)
 for Android, [Auremo](https://auremo.codeplex.com/) for Windows and
 [Theremin](http://mpd.wikia.com/wiki/Client:Theremin) for OSX.
